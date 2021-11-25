@@ -9,14 +9,13 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/text_view_random_number"
+    <ImageView
+        android:id="@+id/img_dice_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="@string/str_one"
-        android:textColor="@color/black"
-        android:textSize="30sp" />
+        android:contentDescription="@string/str_dice_one"
+        android:src="@drawable/dice_empty"/>
 
     <Button
         android:id="@+id/btn_roll_dice"
