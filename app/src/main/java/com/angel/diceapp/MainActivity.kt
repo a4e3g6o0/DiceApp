@@ -4,25 +4,27 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
-import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var diceOneImg: ImageView
+    lateinit var diceTwoImg: ImageView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         this.diceOneImg = findViewById(R.id.img_dice_one)
+        this.diceTwoImg = findViewById(R.id.img_dice_two)
 
         val rollButtton = findViewById<Button>(R.id.btn_roll_dice);
         rollButtton.setOnClickListener {
-            this.rollDice()
+            this.rollDice(diceOneImg)
+            this.rollDice(diceTwoImg)
         }
     }
 
-    fun rollDice() {
+    fun rollDice(dice: ImageView) {
         val randomNumber = (1..6).random()
 
         val image = when (randomNumber) {
@@ -35,6 +37,6 @@ class MainActivity : AppCompatActivity() {
             else -> R.drawable.dice_empty
         }
 
-        this.diceOneImg.setImageResource(image)
+        dice.setImageResource(image)
     }
 }

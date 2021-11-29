@@ -9,13 +9,29 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <ImageView
-        android:id="@+id/img_dice_one"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:contentDescription="@string/str_dice_one"
-        android:src="@drawable/dice_empty"/>
+        android:orientation="horizontal"
+        android:layout_centerInParent="true">
+
+        <ImageView
+            android:id="@+id/img_dice_two"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/str_dice_two"
+            android:src="@drawable/dice_empty" />
+
+        <ImageView
+            android:id="@+id/img_dice_one"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:contentDescription="@string/str_dice_one"
+            android:src="@drawable/dice_empty" />
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/btn_roll_dice"
